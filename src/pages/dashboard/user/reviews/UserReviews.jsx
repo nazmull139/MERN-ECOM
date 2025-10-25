@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../../../components/Loading';
@@ -19,8 +18,8 @@ const UserReviews = () => {
   }
 
     const reviews = data.data || [];
-    console.log(data)
-    console.log(reviews)
+  //  console.log(data)
+   // console.log(reviews)
 
     const handleCardClick = () => {
         navigate("/shop")

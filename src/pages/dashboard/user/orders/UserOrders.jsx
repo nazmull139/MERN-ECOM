@@ -16,7 +16,7 @@ const UserOrders = () => {
     }
 
     const orders = data.data || []
-
+//console.log(orders)
     return (
         <section className="py-1 bg-blueGray-50">
             <div className="w-full mb-12 xl:mb-0 px-4 mx-auto">
@@ -91,7 +91,7 @@ const UserOrders = () => {
                                                 {order.status}
                                             </span>
                                         </td>
-                                        <td>{order.amount.toFixed(2)} BDT</td>
+                                        <td>{order.discountAmount ? order.discountAmount.toFixed(2) : order.amount.toFixed(2)} BDT</td>
                                         <td>
                                             <Link to={`/orders/${order._id}`} className="text-indigo-500 hover:text-indigo-700">View Order</Link>
                                         </td>

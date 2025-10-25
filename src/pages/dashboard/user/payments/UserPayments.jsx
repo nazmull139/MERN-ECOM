@@ -17,9 +17,9 @@ const UserPayments = () => {
 
     const orders = data.data || [];
 
-    console.log(orders[0].status)
+    //console.log(orders[0].status)
     
-    const totalPayment = orders.reduce((acc, order) => acc + order.amount, 0).toFixed(2);
+    const totalPayment = orders.reduce((acc, order) => acc + (order.discountAmount ? order.discountAmount : order.amount) , 0).toFixed(2);
 
   return (
     <div className="py-6 px-4">
@@ -34,7 +34,7 @@ const UserPayments = () => {
               <h5 className="font-medium text-gray-800 mb-2">Order #{index + 1}</h5>
               <div key={index} className="space-y-2">
                 <p className="text-gray-600">Order Id: {item._id}</p>
-                <p className="text-gray-600">Price: {item?.amount} BDT</p>
+                <p className="text-gray-600">Price: {item.discountAmount ? item.discountAmount.toFixed(2) : item.amount.toFixed(2)} BDT</p>
               </div>
               <div className="flex md:flex-row items-center space-x-2">
                 <span className="text-gray-600">Date: {new Date(item.createdAt).toLocaleString()}</span>

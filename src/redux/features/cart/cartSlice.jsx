@@ -74,7 +74,7 @@ const cartSlice = createSlice({
 
         removeFromCart: (state , action) => {
 
-          console.log(action.payload)
+        //  console.log(action.payload)
             state.products = state.products.filter(
             (product) => !(product._id === action.payload.id && product.selectedSize === action.payload.selectedSize))
       

@@ -2,6 +2,7 @@ import { useFetchUserByIdQuery } from '@/redux/features/auth/authApi';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import avatarImg from '../../../assets/avatar.png';
 import { useFetchProductByIdQuery } from '../../../redux/features/products/productsApi';
 import { usePostReviewMutation } from '../../../redux/features/reviews/reviewsApi';
 
@@ -18,9 +19,9 @@ const PostAReview = ({isModalOpen , handleClose}) => {
     const handleRating = (value) => {
         setRating(value);
     }
-    //console.log(user._id)
+    //console.log('id',user?._id)
 
-    const { data:  fetchedUser, error, isLoading } = useFetchUserByIdQuery({ userId: user._id });
+    const { data:  fetchedUser, error, isLoading } = useFetchUserByIdQuery({ userId: user?._id });
 
    // console.log(fetchedUser)
    // console.log(fetchedUser?.user.profileImage)
@@ -53,7 +54,7 @@ const handleSubmit = async (e) => {
         rating: rating,
         userId: user?._id,
         productId: id,
-        image : fetchedUser?.user.profileImage,
+        image : fetchedUser?.user.profileImage || avatarImg,
     }
     if(!user){
         alert("You must be logged in to post a review")

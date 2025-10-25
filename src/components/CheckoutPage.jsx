@@ -45,7 +45,7 @@ const Checkout = () => {
     return acc;
 }, []);
 
-  console.log(groupedProducts)
+  //console.log(groupedProducts)
 
 
   const navigate = useNavigate();
@@ -117,7 +117,8 @@ const Checkout = () => {
      
       buyer: user.username, 
       products, 
-      amount: calculateTotalPrice(),
+      value: calculateTotalPrice(),
+      currency: 'BDT',
       city:city,
       address:address,
       phone:phone,

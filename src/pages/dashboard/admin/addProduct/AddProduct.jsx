@@ -49,7 +49,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!product.name || !product.category || !product.price || !product.oldPrice || selectedColors.length === 0 || !product.description) {
+    if (!product.name || !product.category || !product.price || !product.oldPrice   || !product.description) {
       alert('Please fill in all fields.');
       return;
     }

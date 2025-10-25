@@ -20,7 +20,7 @@ const CartModal = ({products , isOpen , onClose}) => {
       
 
     }
-  console.log(products)
+  //console.log(products)
 
   return (
     <div className={`fixed z-[1000] inset-0 bg-black bg-opacity-80 transition-opacity ${isOpen? "opacity-100" : "opacity-0 pointer-events-none"}`}

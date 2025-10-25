@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useGetReviewsByProductIdQuery } from '@/redux/features/reviews/reviewsApi';
 import { Minus, Plus } from 'lucide-react';
 import { useState } from 'react';
 import ReactPixel from "react-facebook-pixel";
@@ -15,7 +14,7 @@ import ReviewsCard from '../reviews/ReviewsCard';
 const SingleProduct = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-
+//console.log(id)
 
     //const {productName} = useParams()
     
@@ -31,20 +30,16 @@ const SingleProduct = () => {
 
 
     const navigate = useNavigate()
-
-
-
+ 
     const {data , isLoading , error} = useFetchProductByIdQuery(id);
-    const {data: reviewsData} = useGetReviewsByProductIdQuery(id);
-
-
-
+ 
+ 
     const singleProduct = data?.product || {};
     const productReviews = data?.reviews || [];
 
     const disabledSizes = singleProduct.disabledSizes || [];
-  
-    console.log(singleProduct)
+  //console.log(data)
+   // console.log("single",singleProduct)
     
 
     const handleAddToCart = (singleProduct) => {
@@ -229,7 +224,7 @@ if (error) return <p>Error loading product details</p>
                         <RatingStars rating={singleProduct?.rating}/>
 
                             <span className="text-md ml-1">
-                                ({reviewsData?.data?.length ? reviewsData?.data?.length :0})
+                                ({productReviews?.data?.length ? reviewsData?.data?.length :0})
                             </span>
                         </div>
                     </div>
