@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../../redux/features/cart/cartSlice';
 import OrderSummary from './OrderSummary';
 
 const CartModal = ({products , isOpen , onClose}) => {
     const dispatch = useDispatch();
- 
+   const {user} = useSelector((state)=> state.auth);
     const handleQuantity = (type , id , selectedSize)=> {
 
         const payload = {type , id , selectedSize}
@@ -42,6 +42,13 @@ const CartModal = ({products , isOpen , onClose}) => {
 
 
                     {/*//////////  PRODUCT CART  DETAILS /////////////*/}
+
+                          {!user ? 
+                    (<div className='mb-4 text-red-600'>You are not logged in. Please login to proceed to checkout.</div>) : 
+                    (
+
+                        <>
+                   
 
                     <div className='cart-items'>
 
@@ -101,14 +108,15 @@ const CartModal = ({products , isOpen , onClose}) => {
                     </div>
 
 
-                    {/*//////////   CART  CALCULATION /////////////*/}
+                 
                     
                     {
                         products.length > 0 && (
                             <OrderSummary/>
                         )
+                    }</>
+                    )
                     }
-                   
                 </div>
 
             </div>
