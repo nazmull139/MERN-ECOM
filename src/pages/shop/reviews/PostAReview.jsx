@@ -21,7 +21,7 @@ const PostAReview = ({isModalOpen , handleClose}) => {
     }
     //console.log('id',user?._id)
 
-    const { data:  fetchedUser, error, isLoading } = useFetchUserByIdQuery({ userId: user?._id });
+   // const { data:  fetchedUser, error, isLoading } = useFetchUserByIdQuery({ userId: user?._id });
 
    // console.log(fetchedUser)
    // console.log(fetchedUser?.user.profileImage)
@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
         rating: rating,
         userId: user?._id,
         productId: id,
-        image : fetchedUser?.user.profileImage || avatarImg,
+        image : user?.profileImage || avatarImg,
     }
     if(!user){
         alert("You must be logged in to post a review")
