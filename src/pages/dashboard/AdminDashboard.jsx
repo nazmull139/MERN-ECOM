@@ -42,7 +42,7 @@ const AdminDashboard = () => {
     <div className='space-y-5 p-8 md:h-screen flex flex-col justify-between'>
             <div>
                 <div className='nav__logo'>
-                    <Link to="/">Nazr<span>.</span></Link>
+                    <Link to="/"><span className='text-3xl text-red-600'>A</span><span>RTZII</span></Link>
                     <p className='text-xs italic'>Admin Dashboard</p>
                 </div>
                 <hr className='mt-5'></hr>
