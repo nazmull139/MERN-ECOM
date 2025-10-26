@@ -61,7 +61,7 @@ const ShopPage = () => {
         limit: ProductsPerPage ,
 
     })
-    console.log(products)
+   // console.log(products)
 
   {/*  const applyFilters = () =>{
 
