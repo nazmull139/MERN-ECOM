@@ -224,7 +224,7 @@ if (error) return <p>Error loading product details</p>
                         <RatingStars rating={singleProduct?.rating}/>
 
                             <span className="text-md ml-1">
-                                ({productReviews?.data?.length ? reviewsData?.data?.length :0})
+                                ({productReviews?.length ? productReviews?.length :0})
                             </span>
                         </div>
                     </div>
