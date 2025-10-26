@@ -72,13 +72,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
             <p className="text-gray-600 mb-3">Subscribe to our newsletter for the latest updates.</p>
-            <div className="flex items-center bg-gray-800 p-2 rounded-lg">
+             <div className="flex flex-wrap gap-2 bg-gray-800 p-2 rounded-lg  ">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-transparent text-white outline-none pl-2 py-2 flex-1"
+                className="flex-1 min-w-[180px] bg-transparent text-white outline-none px-3 py-2 0 rounded-md"
               />
-              <button className="bg-primary px-4 py-2 text-white font-semibold rounded-lg hover:bg-opacity-90 transition">
+              <button className="bg-primary px-4 py-2 text-white font-semibold rounded-lg hover:bg-opacity-90 transition whitespace-nowrap">
                 Subscribe
               </button>
             </div>
