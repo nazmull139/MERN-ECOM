@@ -76,7 +76,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-transparent text-white outline-none px-3 py-2 flex-1"
+                className="bg-transparent text-white outline-none pl-3 py-2 flex-1"
               />
               <button className="bg-primary px-4 py-2 text-white font-semibold rounded-lg hover:bg-opacity-90 transition">
                 Subscribe
@@ -89,7 +89,7 @@ const Footer = () => {
 
       {/* Footer Bottom Bar */}
       <div className="bg-gray-800 text-gray-400 text-center py-4">
-        © 2025 <span className="text-primary">Nazr</span>. All rights reserved.
+        © 2025 <span className='text-2xl text-red-600'>A</span><span>RTZII</span>. All rights reserved.
       </div>
     </>
   );
