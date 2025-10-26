@@ -7,7 +7,7 @@ import ShopFiltering from './ShopFiltering';
 
 
     const filters = {
-       categories : ['all', 't-shirts', 'panjabi', 'jewellery' , 'cosmetics'],
+       categories : ['all', 'tshirts', 'panjabi', 'jewellery' , 'cosmetics'],
     //   colors : ['all', 'black' ,'red','gold' , 'blue' ,'silver' , 'biege' , 'green'],
        priceRanges: [
         {label: 'under 50', min:100, max:400},
